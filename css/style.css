@@ -10,20 +10,26 @@ html{
     box-sizing: inherit; /*bu meros olishi psevdo elem.larda*/
     padding: 0;
     margin: 0;
+    list-style: none;
+    text-decoration: none;
 }
 body{
     display: flex;
     flex-direction: column;
     height: 100%;               /*sticky footer qilish uchun*/
-    font-family: "Roboto", "Arial", sans-serif;
+    font-family: "Bebas Neue", "Arial", sans-serif;
     font-size: 16px;
     line-height: 1.5;
-    background-color: #fff;
+    background-color: #222;
     color: #222;
 }
 img{
     max-width: 100%;
     height: auto;
+}
+*:focus{
+    outline: 2px dashed #1E90FF;
+    outline-offset: 2px;
 }
 /* CONTAINER */
 .container{
@@ -42,7 +48,7 @@ img{
 }
 /* GLOBAL-WRAPPER */
 .global-wrapper{
-    flex-grow: 1;
+    flex-grow: 1; /* bu hero o'rtaga joylashishi uchun */
     display: flex;
     width: 100%;
     max-width: 1200px;
@@ -55,6 +61,8 @@ img{
     display: flex;
     justify-content: center;
     align-items: center;
+    /* mukammal center */
+    padding: 24px; /* har ehtimolga qarshi ziyoni yo'q*/
     width: 100%;
     max-width: 600px;
     background-image: url(../img/left-bg.jpg);
@@ -82,6 +90,13 @@ img{
     text-decoration: none;
     text-transform: uppercase;
     letter-spacing: 2px;
+    transition: all 0.3s ease;
+}
+.hero-link:hover{
+    background-color: rgba(30, 144, 255, 0.80);
+}
+.hero-link:active{
+    background-color: rgba(30, 144, 255, 0.60);
 }
 .hero-link-inner {
     display: flex;
@@ -97,5 +112,113 @@ img{
     height: 20px;
     content: "";
 }
-.hero-link-text {
+
+/* LATEST-VIDEOS */
+.latest-videos {
+    padding: 54px;
+    background-color: #fff;
+}
+.latest-videos-heading {
+    margin-bottom: 24px;
+    font-size: 24px;
+    font-weight: 400;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+.latest-videos-divider {
+    color: #999;
+    margin-bottom: 24px;
+}
+.latest-videos-list {
+    margin-bottom: 24px;
+}
+.latest-videos-item:not(:last-child) {
+    margin-bottom: 10px;
+}
+
+/* ITEM LATEST VIDEOS */
+.item-latest-videos {
+    display: flex;
+}
+.item-latest-videos-img {
+    width: 160px;
+    height: auto;
+    object-fit: cover;
+    border-radius: 4px;
+}
+.item-latest-videos-info {
+    padding: 16px;
+    /* height: 90px; */
+}
+.item-latest-videos-heading {
+    margin-bottom: 4px;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    letter-spacing: 2px;
+}
+.item-latest-videos-link {
+    display: inline-block;
+    color: #222;
+}
+.item-latest-videos-link:hover{
+    color: #1E90FF;
+}
+.item-latest-videos-link:active{
+    color: rgba(30, 144, 255, 0.60);
+}
+.item-latest-videos-meta {
+    display: flex;
+    align-items: center;
+    color: #888;
+    font-size: 14px;
+
+}
+.item-latest-videos-published-at {
+    display: flex;
+    align-items: center;
+    margin-right: 24px;
+}
+.item-latest-videos-published-at::before{
+    margin-right: 4px;
+    width: 16px;
+    height: 16px;
+    background-image: url(../img/icon-clock\ .svg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+    content: "";
+}
+.item-latest-videos-views{
+    display: flex;
+    align-items: center;
+}
+/*psevdo elementlar inline elem. hisoblanadi bularga display:flex berilgani uchun ba'zi ko'dlar ishlayapti misol uchun width, height*/
+.item-latest-videos-views::before {
+    margin-right: 4px;
+    width: 14px;
+    height: 14px;
+    background-image: url(../img/icon-visibility\ .svg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+    content: "";
+}
+
+.load-more-button{
+    display: block;
+    border: 0;
+    border-radius: 4px;
+    width: 100%;
+    padding: 12px;
+    background-color: #1E90FF;
+    color: #fff;
+    font-size: 14px;
+    cursor: pointer;
+}
+.load-more-button:hover{
+    background-color: rgba(30, 144, 255, 0.80);
+}
+.load-more-button:active{
+    background-color: rgba(30, 144, 255, 0.60);
 }
